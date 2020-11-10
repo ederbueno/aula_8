@@ -16,6 +16,4 @@ fun main() {
     dadosContacliente2.depositarDinheiro(200.00)
     dadosContacliente2.depositarCheque(depositoCheque)
     dadosContacliente2.sacarDinheiro(1350.00)
-    println("Saldo Cliente 2: " + dadosContacliente2.consultarSaldo())
-    println("Limite cheque especial:" + dadosContacliente2.limiteChequeEspecial)
 }
