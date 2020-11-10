@@ -10,11 +10,12 @@ fun main() {
     println("Saldo Cliente 1: " + dadosConta.consultarSaldo())
 
     var cliente2 = Cliente(3,"Ferreira", 5555555, 666666666)
-    var dadosContacliente2 = ContaCorrente(1000.00, 6000.00, cliente2)
+    var dadosContacliente2 = ContaCorrente(1000.00, 1000.00, cliente2)
     var data = Date()
-    var depositoCheque = Cheque(500.00, "Santander", data)
+    var depositoCheque = Cheque(50.00, "Santander", data)
     dadosContacliente2.depositarDinheiro(200.00)
-    dadosContacliente2.sacarDinheiro(50.00)
     dadosContacliente2.depositarCheque(depositoCheque)
+    dadosContacliente2.sacarDinheiro(1350.00)
     println("Saldo Cliente 2: " + dadosContacliente2.consultarSaldo())
+    println("Limite cheque especial:" + dadosContacliente2.limiteChequeEspecial)
 }

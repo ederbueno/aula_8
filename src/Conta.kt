@@ -5,12 +5,12 @@ open class Conta (var saldo: Double, val cliente: Cliente) {
          return saldo
     }
 
-    fun sacarDinheiro(sacar: Double) : Double {
+    open fun sacarDinheiro(sacar: Double) : Double {
         saldo -= sacar
          return saldo
     }
 
-    fun consultarSaldo() : Double {
+    open fun consultarSaldo() : Double {
         return saldo
     }
 }
