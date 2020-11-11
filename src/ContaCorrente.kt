@@ -17,14 +17,11 @@ class ContaCorrente (var limiteChequeEspecial: Double,saldo: Double, cliente: Cl
                     println("Limite cheque especial:" + limiteChequeEspecial)
                     return limiteChequeEspecial
                 }
-
             }
            else {
                 println("Saldo Cliente 2: " + consultarSaldo())
                 return saldo
             }
               return -1.0
-
     }
-
 }

@@ -3,7 +3,8 @@ class ContaPoupanca (saldo: Double, cliente: Cliente ) : Conta(saldo, cliente) {
 
     fun recolherJuros(): Double{
 
-        saldo += taxaJuros
-        return saldo
+      return saldo * taxaJuros
+
+
     }
 }
