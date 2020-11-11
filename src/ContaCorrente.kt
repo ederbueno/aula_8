@@ -8,19 +8,32 @@ class ContaCorrente (var limiteChequeEspecial: Double,saldo: Double, cliente: Cl
     }
 
     override fun sacarDinheiro(sacar: Double) : Double {
-            saldo -= sacar
+
             if(saldo < 0) {
-                limiteChequeEspecial += saldo
+                limiteChequeEspecial -= sacar
                 if(limiteChequeEspecial < 0)
                     println("Limite de cheque especial foi execedido, não é possível realizar o saque")
                 else {
+                    limiteChequeEspecial +=saldo
                     println("Limite cheque especial:" + limiteChequeEspecial)
+                    saldo -=sacar
                     return limiteChequeEspecial
                 }
             }
-           else {
-                println("Saldo Cliente 2: " + consultarSaldo())
-                return saldo
+           else if (saldo > sacar) {
+                    saldo -= sacar
+                    println("Saldo Cliente 2: " + consultarSaldo())
+                    return saldo
+                }else{
+                    limiteChequeEspecial -= sacar
+                if(limiteChequeEspecial < 0) {
+                    println("Limite de cheque especial foi execedido, não é possível realizar o saque")
+                }else{
+                    limiteChequeEspecial +=saldo
+                    println("Limite cheque especial:" + limiteChequeEspecial)
+                    saldo -=sacar
+                    return limiteChequeEspecial
+                }
             }
               return -1.0
     }
