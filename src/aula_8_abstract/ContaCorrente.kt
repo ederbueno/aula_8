@@ -1,9 +1,16 @@
-class ContaCorrente (var limiteChequeEspecial: Double,saldo: Double, cliente: Cliente)
+package aula_8_abstract
+
+class ContaCorrente (var limiteChequeEspecial: Double, saldo: Double, cliente: Cliente)
     : Conta(saldo, cliente) {
 
     fun depositarCheque(cheque: Cheque) : Double {
 
         saldo += cheque.valor
+        return saldo
+    }
+
+    override fun depositarDinheiro(deposito: Double): Double {
+        saldo += deposito
         return saldo
     }
 
@@ -22,11 +29,12 @@ class ContaCorrente (var limiteChequeEspecial: Double,saldo: Double, cliente: Cl
             }
            else if (saldo > sacar) {
                     saldo -= sacar
-                    println("Saldo Cliente 2: " + consultarSaldo())
+                    println("Saldo aula_8_henranca.Cliente 2: " + consultarSaldo())
                     return saldo
                 }else{
                     limiteChequeEspecial -= sacar
                 if(limiteChequeEspecial < 0) {
+
                     println("Limite de cheque especial foi execedido, não é possível realizar o saque")
                 }else{
                     limiteChequeEspecial +=saldo
@@ -36,5 +44,9 @@ class ContaCorrente (var limiteChequeEspecial: Double,saldo: Double, cliente: Cl
                 }
             }
               return -1.0
+    }
+
+    override fun consultarSaldo(): Double {
+        return saldo
     }
 }

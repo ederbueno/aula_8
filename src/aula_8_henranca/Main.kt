@@ -1,9 +1,11 @@
+package aula_8_henranca
+
 import java.util.*
 
 fun main() {
 
-  /*  var cliente1 = Cliente(2,"Bueno", 444444444, 333333333)
-    var dadosConta = ContaPoupanca(5000.00, cliente1)
+  /*  var cliente1 = aula_8_henranca.Cliente(2,"Bueno", 444444444, 333333333)
+    var dadosConta = aula_8_henranca.ContaPoupanca(5000.00, cliente1)
     dadosConta.depositarDinheiro(100.00)
     dadosConta.sacarDinheiro(10.00)
     dadosConta.recolherJuros()
